@@ -1,0 +1,8 @@
+services:
+
+  rebuilder.run_command:
+    class: Drupal\rebuilder\Commands\RunCommand
+    arguments:
+      - '@plugin.manager.rebuilder'
+    tags:
+      - { name: drush.command }
