@@ -1,0 +1,6 @@
+services:
+
+  # The Rebuilder plug-in manager.
+  plugin.manager.rebuilder:
+    class: Drupal\rebuilder\PluginManager\RebuilderManager
+    parent: default_plugin_manager
