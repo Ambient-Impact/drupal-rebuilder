@@ -1,0 +1,5 @@
+name: Rebuilder
+type: module
+description: Provides a framework to rebuild various things without doing a full cache clear.
+package: Rebuilder
+core_version_requirement: ^9 || ^10
