@@ -43,7 +43,8 @@ class RunCommand extends DrushCommands {
    *   options they support, if any.
    *
    * @throws \Drush\Exceptions\CommandFailedException
-   *   If the Rebuilder plug-in manager threw an error, with the text of the error.
+   *   If the Rebuilder plug-in manager threw an error, with the text of the
+   *   error.
    */
   public function runRebuilder(
     string $rebuilderId, array $options = ['option' => []]
