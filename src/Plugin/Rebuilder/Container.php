@@ -66,7 +66,11 @@ class Container extends RebuilderBase {
   public function rebuild(array $options = []): void {
 
     $this->kernel->invalidateContainer();
-    $this->kernel->rebuildContainer();
+
+    // Don't actually call $this->kernel->rebuildContainer() here because doing
+    // so seems to obliterate any messages queued in the messenger service. The
+    // container will be rebuilt automatically by Drupal/Symfony now that it's
+    // invalidated.
 
     $this->setOutput($this->t('Container rebuilt.'));
 
