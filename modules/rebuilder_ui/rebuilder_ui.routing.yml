@@ -1,0 +1,7 @@
+rebuilder.run_form:
+  path: '/admin/config/development/performance/rebuilder'
+  defaults:
+    _form: '\Drupal\rebuilder_ui\Form\RebuilderRunForm'
+    _title: 'Rebuilder'
+  requirements:
+    _permission: 'administer site configuration'

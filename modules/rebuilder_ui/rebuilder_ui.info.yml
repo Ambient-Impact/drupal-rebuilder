@@ -1,0 +1,8 @@
+name: Rebuilder UI
+type: module
+description: Provides a user interface for running Rebuilder tasks.
+package: Rebuilder
+core_version_requirement: ^9 || ^10
+configure: rebuilder.run_form
+dependencies:
+  - rebuilder:rebuilder

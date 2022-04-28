@@ -1,0 +1,5 @@
+rebuilder.run_form:
+  route_name: rebuilder.run_form
+  title: 'Rebuilder'
+  base_route: system.performance_settings
+  weight: 100
