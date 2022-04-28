@@ -16,7 +16,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @Rebuilder(
  *   id           = "asset",
  *   title        = @Translation("Asset"),
- *   description  = @Translation("Rebuilds aggregated CSS and JS assets.")
+ *   description  = @Translation("Rebuilds aggregated CSS and JS assets."),
+ *   aliases      = {
+ *     "assets"
+ *   },
  * )
  */
 class Asset extends RebuilderBase {

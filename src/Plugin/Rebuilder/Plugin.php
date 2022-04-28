@@ -12,7 +12,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @Rebuilder(
  *   id           = "plugin",
  *   title        = @Translation("Plug-in definintions"),
- *   description  = @Translation("Rebuilds plug-in definitions for some or all plug-in types.")
+ *   description  = @Translation("Rebuilds plug-in definitions for some or all plug-in types."),
+ *   aliases      = {
+ *     "plugins"
+ *   },
  * )
  *
  * @see https://www.drupal.org/project/drush_clear_plugins_cache

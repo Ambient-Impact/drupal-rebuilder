@@ -13,7 +13,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @Rebuilder(
  *   id           = "library",
  *   title        = @Translation("Library"),
- *   description  = @Translation("Rebuilds library definitions.")
+ *   description  = @Translation("Rebuilds library definitions."),
+ *   aliases      = {
+ *     "libraries"
+ *   },
  * )
  */
 class Library extends RebuilderBase {
