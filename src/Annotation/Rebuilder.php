@@ -34,4 +34,17 @@ class Rebuilder extends Plugin {
    */
   public Translation $description;
 
+  /**
+   * Aliases for this plug-in.
+   *
+   * Allows the plug-in manager to find plug-ins via alternate identifiers.
+   * The primary use case for this is the Drush command but any code that
+   * attempts to run a Rebuilder with an alias can benefit from this.
+   *
+   * @var string[]
+   *
+   * @see \Drupal\rebuilder\PluginManager\RebuilderManager::getFallbackPluginId()
+   */
+  public array $aliases;
+
 }

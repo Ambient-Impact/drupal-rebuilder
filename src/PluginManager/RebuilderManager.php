@@ -2,6 +2,7 @@
 
 namespace Drupal\rebuilder\PluginManager;
 
+use Drupal\Component\Plugin\FallbackPluginManagerInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
@@ -13,7 +14,7 @@ use Drupal\rebuilder\Plugin\Rebuilder\RebuilderInterface;
 /**
  * The Rebuilder plug-in manager.
  */
-class RebuilderManager extends DefaultPluginManager implements RebuilderManagerInterface {
+class RebuilderManager extends DefaultPluginManager implements RebuilderManagerInterface, FallbackPluginManagerInterface {
 
   /**
    * Creates the discovery object.
@@ -66,6 +67,32 @@ class RebuilderManager extends DefaultPluginManager implements RebuilderManagerI
     // any classes with a RebuilderAnnotation::class. The annotations are read,
     // and then the resulting data is cached using the provided cache backend.
     $this->setCacheBackend($cacheBackend, 'rebuilder_info');
+
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFallbackPluginId($pluginId, array $configuration = []) {
+
+    /** @var array */
+    $definitions = $this->getDefinitions();
+
+    foreach ($definitions as $definitionId => $definition) {
+      // If an alias exists matching the provided plug-in identifier, return the
+      // identifier of the definition.
+      if (
+        !empty($definition['aliases']) &&
+        \in_array($pluginId, $definition['aliases'])
+      ) {
+        return $definitionId;
+      }
+    }
+
+    // Just return the plug-in identifier if an alias was not found so the error
+    // message displays it as not found rather than a blank string or something
+    // else confusing to the user.
+    return $pluginId;
 
   }
 
