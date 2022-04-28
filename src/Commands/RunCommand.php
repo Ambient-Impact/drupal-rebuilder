@@ -35,6 +35,8 @@ class RunCommand extends DrushCommands {
    *
    * @command rebuilder:run
    *
+   * @aliases rebuilder
+   *
    * @param string $rebuilderId
    *   The machine name of the Rebuilder plug-in to run.
    *
