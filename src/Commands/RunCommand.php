@@ -18,7 +18,7 @@ class RunCommand extends DrushCommands {
    *
    * @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface
    */
-  protected $rebuilderManager;
+  protected RebuilderManagerInterface $rebuilderManager;
 
   /**
    * Constructor; saves dependencies.
