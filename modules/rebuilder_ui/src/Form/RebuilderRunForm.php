@@ -70,20 +70,20 @@ class RebuilderRunForm extends FormBase {
     /** @var array[] All available Rebuilder plug-in definitions. */
     $pluginDefinitions = $this->rebuilderManager->getDefinitions();
 
-    $form['run_rebuilder'] = [
-      '#type'   => 'details',
-      '#title'  => $this->t('Run a rebuilder'),
-      '#open'   => true,
+    $form['rebuilders'] = [
+      '#type'   => 'vertical_tabs',
+      '#title'  => $this->t('Available rebuilders'),
     ];
 
     foreach ($pluginDefinitions as $pluginId => $pluginDefinition) {
 
-      $form['run_rebuilder'][$pluginId] = [
+      $form['rebuilder-' . $pluginId] = [
 
-        '#type'         => 'fieldset',
+        '#type'         => 'details',
         '#title'        => $pluginDefinition['title'],
         '#description'  => $pluginDefinition['description'],
         '#description_display' => 'before',
+        '#group'        => 'rebuilders',
 
         'run' => [
           '#type'         => 'submit',
