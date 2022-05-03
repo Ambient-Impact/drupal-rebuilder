@@ -22,6 +22,22 @@ This module provides a plug-in manager, base plug-in, several commonly used plug
 
 ----
 
+# Usage
+
+Once installed, two Drush commands become available:
+
+1. ```rebuilder:list``` - lists all available Rebuilder plug-ins.
+
+2. ```rebuilder:run``` - runs a specified Rebuilder.
+
+A *Rebuilder UI* sub-module is also provided that adds an administration form where individual Rebuilders can be invoked. Once the module is enabled, this can be found under:
+
+>  Administration / Configuration / Development / Performance / Rebuilder
+
+or the path: ```/admin/config/development/performance/rebuilder```
+
+----
+
 # Questions and answers
 
 * *Can I write my own plug-ins?* Absolutely! In fact, that's one of the reasons this module is built around a plug-in manager rather than hard-coding it all. See the [Drupal Plug-in API documentation](https://www.drupal.org/docs/drupal-apis/plugin-api) for how to implement your own.
