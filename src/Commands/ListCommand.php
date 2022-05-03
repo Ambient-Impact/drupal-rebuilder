@@ -5,7 +5,6 @@ namespace Drupal\rebuilder\Commands;
 use Consolidation\OutputFormatters\StructuredData\UnstructuredListData;
 use Drupal\rebuilder\PluginManager\RebuilderManagerInterface;
 use Drush\Commands\DrushCommands;
-use Drush\Exceptions\CommandFailedException;
 
 /**
  * rebuilder:list Drush command.
