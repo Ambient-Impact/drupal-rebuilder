@@ -8,7 +8,7 @@
 
 2. It's often hard to remember exactly what service or command can clear/rebuild what, and methods to do so vary by name.
 
-This module provides a plug-in manager, base plug-in, and several commonly used plug-ins along with a Drush command to invoke them as needed.
+This module provides a plug-in manager, base plug-in, several commonly used plug-ins, along with Drush commands an a UI sub-module to invoke them as needed.
 
 ----
 
