@@ -36,6 +36,7 @@ class ListCommand extends DrushCommands {
    * @command rebuilder:list
    *
    * @return \Consolidation\OutputFormatters\StructuredData\UnstructuredListData
+   *   A list of Rebuilder type machine names.
    */
   public function listRebuilders(): UnstructuredListData {
 

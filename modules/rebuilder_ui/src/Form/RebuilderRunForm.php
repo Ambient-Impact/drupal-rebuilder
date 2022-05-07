@@ -38,9 +38,12 @@ class RebuilderRunForm extends FormBase {
     RebuilderManagerInterface $rebuilderManager,
     TranslationInterface      $stringTranslation
   ) {
+    // ¯\_(ツ)_/¯
+    // phpcs:disable Drupal.Formatting.MultipleStatementAlignment.NotSame
     $this->messenger          = $messenger;
     $this->rebuilderManager   = $rebuilderManager;
     $this->stringTranslation  = $stringTranslation;
+    // phpcs:enable
   }
 
   /**
@@ -60,7 +63,6 @@ class RebuilderRunForm extends FormBase {
   public function getFormId() {
     return 'rebuilder_ui_run';
   }
-
 
   /**
    * {@inheritdoc}

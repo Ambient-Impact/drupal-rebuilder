@@ -130,7 +130,7 @@ class Plugin extends RebuilderBase {
       }
 
       $this->setOutput($this->t('@type plug-in definitions rebuilt.', [
-        '@type' => \implode(',', $options)
+        '@type' => \implode(',', $options),
       ]));
 
     } else {
