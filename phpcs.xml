@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<ruleset name="rebuilder">
+
+  <description>PHP CodeSniffer configuration for Rebuilder.</description>
+  <file>.</file>
+  <arg name="extensions" value="php,module,install,test,profile,theme,css,info,yml"/>
+  <config name="drupal_core_version" value="8"/>
+
+  <rule ref="Drupal">
+
+    <!--
+      The requirement that @param declarations not have a blank line between
+      them makes methods with a bunch of @params harder to scan visually.
+    -->
+    <exclude name="Drupal.Commenting.DocComment.ParamGroup"/>
+
+    <!--
+      There are some instances where spaces before, after, or containing some
+      indenting in an inline comment make sense in their context.
+    -->
+    <exclude name="Drupal.Commenting.InlineComment.SpacingAfter"/>
+    <exclude name="Drupal.Commenting.InlineComment.SpacingBefore"/>
+
+    <!--
+      These are purely cosmetic and don't allow for lining up arguments in a
+      table-like fashion for readability.
+    -->
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterHint"/>
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.OneParamPerLine"/>
+
+  </rule>
+
+  <!--
+    These have 'use' statements referencing base classes or interfaces in the
+    same namespace and Coder doesn't like these. Explicitly listing all
+    dependencies - even in the same namespace - is arguably more consistent and
+    thorough from a readability point of view and so you know where all your
+    dependencies are coming from.
+
+    @see https://www.drupal.org/project/coder/issues/2923699
+  -->
+  <rule ref="Drupal.Classes.UnusedUseStatement.UnusedUse">
+    <exclude-pattern>*/src/Plugin/Rebuilder/*</exclude-pattern>
+    <exclude-pattern>*/src/PluginManager/*</exclude-pattern>
+  </rule>
+
+  <!-- Drush command annotations have stuff before @param. -->
+  <rule ref="Drupal.Commenting.DocComment.ParamNotFirst">
+    <exclude-pattern>*/src/Commands/*</exclude-pattern>
+  </rule>
+
+  <!-- Drush command class docblocks start with the lowercase command name. -->
+  <rule ref="Drupal.Commenting.DocComment.ShortNotCapital">
+    <exclude-pattern>*/src/Commands/*</exclude-pattern>
+  </rule>
+
+  <!--
+    {@inheritdoc} plus additional information is not currently supported but
+    there's precedent for it and the discussion is ongoing.
+
+    @see https://www.drupal.org/project/coding_standards/issues/1994890
+  -->
+  <rule ref="Drupal.Commenting.FunctionComment.ParamMissingDefinition">
+    <exclude-pattern>*/src/Plugin/Rebuilder/*</exclude-pattern>
+  </rule>
+
+</ruleset>
