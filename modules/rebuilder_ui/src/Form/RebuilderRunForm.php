@@ -43,7 +43,7 @@ class RebuilderRunForm extends FormBase {
     $this->messenger          = $messenger;
     $this->rebuilderManager   = $rebuilderManager;
     $this->stringTranslation  = $stringTranslation;
-    // phpcs:enable
+    // phpcs:enable Drupal.Formatting.MultipleStatementAlignment.NotSame
   }
 
   /**
