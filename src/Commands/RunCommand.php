@@ -55,6 +55,7 @@ class RunCommand extends DrushCommands {
     string $rebuilderId, array $options = ['option' => []]
   ): void {
 
+    // phpcs:disable Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace
     try {
 
       /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The ouput from the Rebuilder plug-in. */
@@ -69,6 +70,7 @@ class RunCommand extends DrushCommands {
       throw new CommandFailedException($exception->getMessage());
 
     }
+    // phpcs:enable Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace
 
   }
 

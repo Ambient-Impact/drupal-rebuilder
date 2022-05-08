@@ -76,6 +76,9 @@ abstract class RebuilderBase extends PluginBase implements ContainerFactoryPlugi
    */
   public function getOutput(): TranslatableMarkup {
 
+    // phpcs:disable Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace
+    // phpcs:disable Drupal.WhiteSpace.ScopeIndent.IncorrectExact
+
     // If output has been provided, return that.
     if (isset($this->output) && $this->output instanceof TranslatableMarkup) {
       return $this->output;
@@ -86,6 +89,9 @@ abstract class RebuilderBase extends PluginBase implements ContainerFactoryPlugi
         '@pluginName' => $this->getPluginDefinition()['title'],
       ]);
     }
+
+    // phpcs:enable Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace
+    // phpcs:enable Drupal.WhiteSpace.ScopeIndent.IncorrectExact
 
   }
 

@@ -110,6 +110,7 @@ class Plugin extends RebuilderBase {
    */
   public function rebuild(array $options = []): void {
 
+    // phpcs:disable Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace
     if (!empty($options)) {
 
       foreach ($options as $pluginId) {
@@ -157,6 +158,7 @@ class Plugin extends RebuilderBase {
       $this->setOutput($this->t('All plug-in definitions rebuilt.'));
 
     }
+    // phpcs:enable Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace
 
   }
 

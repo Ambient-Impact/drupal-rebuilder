@@ -125,6 +125,7 @@ class RebuilderRunForm extends FormBase {
     array &$form, FormStateInterface $form_state
   ): void {
 
+    // phpcs:disable Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace
     try {
 
       /** @var array */
@@ -142,6 +143,7 @@ class RebuilderRunForm extends FormBase {
       $this->messenger->addError($exception->getMessage());
 
     }
+    // phpcs:enable Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace
 
   }
 
