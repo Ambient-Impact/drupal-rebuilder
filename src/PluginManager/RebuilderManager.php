@@ -10,7 +10,9 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\rebuilder\Annotation\Rebuilder as RebuilderAnnotation;
+// phpcs:disable Drupal.Classes.UnusedUseStatement.UnusedUse
 use Drupal\rebuilder\PluginManager\RebuilderManagerInterface;
+// phpcs:enable Drupal.Classes.UnusedUseStatement.UnusedUse
 use Drupal\rebuilder\Plugin\Rebuilder\RebuilderInterface;
 
 /**

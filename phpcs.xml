@@ -31,18 +31,15 @@
   </rule>
 
   <!--
-    These have 'use' statements referencing base classes or interfaces in the
-    same namespace and Coder doesn't like these. Explicitly listing all
-    dependencies - even in the same namespace - is arguably more consistent and
-    thorough from a readability point of view and so you know where all your
-    dependencies are coming from.
+    You'll find a bunch of
+    phpcs:disable Drupal.Classes.UnusedUseStatement.UnusedUse
+    at the start of a lot of classes wrapping the use of base classes or
+    interfaces in the same namespace. Normally, Coder would complain about these
+    as they're not technically needed, but it's arguably more consistent and
+    makes it explicit where all of the dependencies are coming from.
 
     @see https://www.drupal.org/project/coder/issues/2923699
   -->
-  <rule ref="Drupal.Classes.UnusedUseStatement.UnusedUse">
-    <exclude-pattern>*/src/Plugin/Rebuilder/*</exclude-pattern>
-    <exclude-pattern>*/src/PluginManager/*</exclude-pattern>
-  </rule>
 
   <!-- Drush command annotations have stuff before @param. -->
   <rule ref="Drupal.Commenting.DocComment.ParamNotFirst">

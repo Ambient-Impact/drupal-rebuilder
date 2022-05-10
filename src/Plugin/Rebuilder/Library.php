@@ -6,7 +6,9 @@ namespace Drupal\rebuilder\Plugin\Rebuilder;
 
 use Drupal\Core\Asset\LibraryDiscoveryInterface;
 use Drupal\Core\StringTranslation\TranslationInterface;
+// phpcs:disable Drupal.Classes.UnusedUseStatement.UnusedUse
 use Drupal\rebuilder\Plugin\Rebuilder\RebuilderBase;
+// phpcs:enable Drupal.Classes.UnusedUseStatement.UnusedUse
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

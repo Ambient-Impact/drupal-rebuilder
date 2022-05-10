@@ -9,7 +9,9 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\StringTranslation\TranslationInterface;
+// phpcs:disable Drupal.Classes.UnusedUseStatement.UnusedUse
 use Drupal\rebuilder\Plugin\Rebuilder\RebuilderInterface;
+// phpcs:enable Drupal.Classes.UnusedUseStatement.UnusedUse
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
