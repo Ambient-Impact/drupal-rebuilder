@@ -1,7 +1,7 @@
 {
   "name": "drupal/rebuilder",
   "description": "Rebuilder",
-  "type": "project",
+  "type": "drupal-module",
   "license": "GPL-2.0-or-later",
   "authors": [
     {
