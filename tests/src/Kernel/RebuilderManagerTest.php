@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\Tests\rebuilder\Kernel;
 
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\rebuilder\PluginManager\RebuilderManagerInterface;
 
 /**
  * Tests the Rebuilder plug-in manager.
@@ -16,6 +17,13 @@ use Drupal\KernelTests\KernelTestBase;
 class RebuilderManagerTest extends KernelTestBase {
 
   /**
+   * The Rebuilder plug-in manager.
+   *
+   * @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface
+   */
+  protected RebuilderManagerInterface $rebuilderManager;
+
+  /**
    * The modules to load to run the test.
    *
    * @var array
@@ -25,22 +33,31 @@ class RebuilderManagerTest extends KernelTestBase {
   ];
 
   /**
+   * {@inheritdoc}
+   */
+  protected function setUp(): void {
+
+    parent::setUp();
+
+    /** @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface */
+    $this->rebuilderManager = $this->container->get('plugin.manager.rebuilder');
+
+  }
+
+  /**
    * Tests getting plug-in identifiers via aliases.
    *
    * @covers ::getFallbackPluginId
    */
   public function testPluginHasAlias(): void {
 
-    /** @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface */
-    $rebuilderManager = $this->container->get('plugin.manager.rebuilder');
-
     $this->assertEquals(
-      $rebuilderManager->getFallbackPluginId('assets'),
+      $this->rebuilderManager->getFallbackPluginId('assets'),
       'asset'
     );
 
     $this->assertEquals(
-      $rebuilderManager->getFallbackPluginId('libraries'),
+      $this->rebuilderManager->getFallbackPluginId('libraries'),
       'library'
     );
 
@@ -53,11 +70,8 @@ class RebuilderManagerTest extends KernelTestBase {
    */
   public function testPluginNoAlias(): void {
 
-    /** @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface */
-    $rebuilderManager = $this->container->get('plugin.manager.rebuilder');
-
     $this->assertEquals(
-      $rebuilderManager->getFallbackPluginId('router'),
+      $this->rebuilderManager->getFallbackPluginId('router'),
       'router'
     );
 

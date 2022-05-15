@@ -6,6 +6,7 @@ namespace Drupal\Tests\rebuilder\Kernel;
 
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\rebuilder\PluginManager\RebuilderManagerInterface;
 use Drupal\rebuilder\Plugin\Rebuilder\RebuilderInterface;
 
 /**
@@ -32,6 +33,13 @@ class RebuilderPluginTest extends KernelTestBase {
   protected const REBUILDER_CUSTOM_OUTPUT_PLUGIN = 'test_has_custom_output';
 
   /**
+   * The Rebuilder plug-in manager.
+   *
+   * @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface
+   */
+  protected RebuilderManagerInterface $rebuilderManager;
+
+  /**
    * The modules to load to run the test.
    *
    * @var array
@@ -39,6 +47,18 @@ class RebuilderPluginTest extends KernelTestBase {
   protected static $modules = [
     'rebuilder', 'rebuilder_test',
   ];
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp(): void {
+
+    parent::setUp();
+
+    /** @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface */
+    $this->rebuilderManager = $this->container->get('plugin.manager.rebuilder');
+
+  }
 
   /**
    * Get an instance of a specified Rebuilder plug-in.
@@ -53,10 +73,7 @@ class RebuilderPluginTest extends KernelTestBase {
     string $pluginId
   ): RebuilderInterface {
 
-    /** @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface */
-    $rebuilderManager = $this->container->get('plugin.manager.rebuilder');
-
-    return $rebuilderManager->createInstance($pluginId);
+    return $this->rebuilderManager->createInstance($pluginId);
 
   }
 
