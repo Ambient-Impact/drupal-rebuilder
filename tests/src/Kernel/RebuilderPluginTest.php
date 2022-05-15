@@ -35,9 +35,15 @@ class RebuilderPluginTest extends KernelTestBase {
   /**
    * The Rebuilder plug-in manager.
    *
-   * @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface
+   * Note that this must be nullable because KernelTestBase::tearDown() will set
+   * this to null which will cause the test to fail due to a TypeError after
+   * running.
+   *
+   * @var \Drupal\rebuilder\PluginManager\RebuilderManagerInterface|null
+   *
+   * @see \Drupal\KernelTests\KernelTestBase::tearDown()
    */
-  protected RebuilderManagerInterface $rebuilderManager;
+  protected ?RebuilderManagerInterface $rebuilderManager;
 
   /**
    * The modules to load to run the test.
