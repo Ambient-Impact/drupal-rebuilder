@@ -95,7 +95,7 @@ class RebuilderPluginTest extends KernelTestBase {
       self::REBUILDER_DEFAULT_OUTPUT_PLUGIN
     );
 
-    /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The ouput from the Rebuilder plug-in. */
+    /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The output from the Rebuilder plug-in. */
     $output = $instance->getOutput();
 
     $this->assertInstanceOf(TranslatableMarkup::class, $output);
@@ -114,7 +114,7 @@ class RebuilderPluginTest extends KernelTestBase {
       self::REBUILDER_CUSTOM_OUTPUT_PLUGIN
     );
 
-    /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The ouput from the Rebuilder plug-in. */
+    /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The output from the Rebuilder plug-in. */
     $output = $instance->getOutput();
 
     $this->assertInstanceOf(TranslatableMarkup::class, $output);
@@ -140,7 +140,7 @@ class RebuilderPluginTest extends KernelTestBase {
       'Custom output has been set.'
     ));
 
-    /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The ouput from the Rebuilder plug-in. */
+    /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The output from the Rebuilder plug-in. */
     $output = $instance->getOutput();
 
     $this->assertInstanceOf(TranslatableMarkup::class, $output);

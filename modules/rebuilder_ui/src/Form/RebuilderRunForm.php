@@ -133,7 +133,7 @@ class RebuilderRunForm extends FormBase {
       /** @var array */
       $element = $form_state->getTriggeringElement();
 
-      /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The ouput from the Rebuilder plug-in. */
+      /** @var \Drupal\Core\StringTranslation\TranslatableMarkup The output from the Rebuilder plug-in. */
       $output = $this->rebuilderManager->runRebuilder(
         $element['#rebuilder_id']
       );
