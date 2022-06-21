@@ -1,7 +1,3 @@
-***This module is still in active development and does not yet have a stable release but a 1.0 is planned to be released in the near future.***
-
-----
-
 # Motivation
 
 1. On larger and more complex sites, doing a full cache clear can lead to significant performance issues while things get rebuilt, when you often only need to rebuild one or two things.
